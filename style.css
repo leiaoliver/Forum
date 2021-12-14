@@ -1,0 +1,414 @@
+/*----reset--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+header img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+}
+
+.main {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  padding-top: 70px;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/*---- VARIÁVEIS --------------------------------*/
+:root {
+  --header-height: 4.5rem;
+
+  /* colors */
+  --hue: 159;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+  --dark-purple: hsl(300, 98%, 20%);
+  --light-purple: hsl(300, 48%, 80%);
+
+  /* fonts */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
+}
+
+/*----BASE--------------------------------*/
+
+body {
+  font: 400 1rem 'DM Sans', sans-serif;
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+h2 {
+  font: 700 1.31rem 'DM Sans', sans-serif;
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+
+/*----LAYOUT--------------------------------*/
+.grid {
+  display: grid;
+  gap: 0.5rem;
+}
+.container {
+}
+
+.header {
+  /*linha abaixo do header*/
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--body-color);
+  width: 100%;
+}
+
+main {
+  overflow-x: hidden;
+  margin-top: calc(var(--header-height) + 4rem);
+}
+
+header nav {
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 1200px;
+  margin: auto;
+}
+
+#divider {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 1rem;
+}
+
+/*----LOGO--------------------------------*/
+.logo {
+  font: 700 1.31rem 'Poppins', sans-serif;
+  color: var(--title-color);
+}
+
+.logo span {
+  color: var(--dark-purple);
+}
+/*----INPUT--------------------------------*/
+#input {
+  border: 1px solid #f1f0f0;
+  background-color: #f1f0f0;
+  margin: 2rem;
+  padding: 1.5rem 2rem;
+  width: 400px;
+  height: 1.7rem;
+  border-radius: 0.3rem;
+
+  font: 400 1rem 'DM Sans', sans-serif;
+  color: var(--text-color);
+}
+
+button {
+  border: none;
+
+  margin-right: -4rem;
+
+  position: relative;
+}
+
+/*----Icons--------------------------------*/
+.icons {
+  display: flex;
+  align-items: center;
+}
+.icon-cyno {
+  margin-right: 2rem;
+}
+
+/*----MENU--------------------------------*/
+.menu {
+  padding: 0.2rem;
+}
+.menu ul li {
+  text-align: justify;
+
+  transition: 0.2s;
+  width: 14rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+nav ul li.active {
+  background-color: var(--light-purple);
+  border-left: 5px solid var(--dark-purple);
+}
+
+nav ul li:hover {
+  background-color: var(--light-purple); /*bloco/caixa*/
+}
+
+nav ul .topcs:hover {
+  color: var(--dark-purple); /*texto li*/
+}
+
+.topcs {
+  font: 400 1rem 'DM Sans', sans-serif;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+
+  margin-right: 0.5rem;
+}
+
+.menu h2.topcs {
+  margin-left: 2.8rem;
+}
+
+nav .menu h2 {
+  margin-left: 1rem;
+}
+ul li {
+  list-style-type: none;
+}
+
+/*----HOME--------------------------------*/
+
+#home {
+  margin: 0 3rem;
+}
+
+#home .post,
+.list {
+  background: white;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1rem;
+  box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+}
+
+#home .post1 {
+  margin-top: 2rem;
+}
+
+#home .container {
+  margin-left: 0;
+}
+
+#home header {
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#home blockquote p {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  text-align: justify;
+}
+
+#home cite {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+
+  justify-content: space-between;
+}
+
+#home cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  clip-path: circle();
+  margin-right: 1.2rem;
+}
+
+#home cite span {
+  color: var(--dark-purple);
+  margin-left: 0.5rem;
+}
+
+#home cite .posted {
+  display: flex;
+}
+
+#home cite h3,
+.icon-more {
+  font-size: 0.8rem;
+}
+
+#home cite .icon-answers {
+  font-size: 1.2rem;
+}
+
+#home .arrows,
+.icon-arrow-cima,
+.icon-arrow-baixo {
+  margin-top: 0.3rem;
+  margin-right: 2rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#home .icon-arrow-cima {
+  font-size: 1.5rem;
+}
+#home .icon-arrow-baixo {
+  font-size: 1.5rem;
+}
+
+#home .blue {
+  color: blue;
+}
+
+#home .red {
+  color: red;
+}
+/*----USERS--------------------------------*/
+
+.button {
+  background-color: var(--dark-purple);
+  color: white;
+  height: 3rem;
+
+  display: inline-flex;
+  align-items: center;
+  padding: 0 3rem;
+  border-radius: 0.25rem;
+  font: 500 0.9rem 'DM Sans', sans-serif;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: var(--light-purple);
+  color: var(--text-color);
+}
+
+.button .icon-more,
+.icon-store {
+  color: white;
+  font-size: 1rem;
+}
+
+#myUsers {
+  background: white;
+  margin-top: 1rem;
+}
+
+#myUsers ul {
+  margin-top: 1rem;
+}
+
+#myUsers ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+#myUsers ul li a {
+  margin-left: 1rem;
+  white-space: pre;
+}
+
+#myUsers .users {
+  padding: 1rem;
+  box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 0.35rem;
+}
+
+#myUsers img {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.3rem;
+
+  clip-path: circle();
+}
+
+#myUsers .thousand {
+  margin-left: 2rem;
+  font-size: 0.8rem;
+}
+
+#myUsers .icon-arrow-cima {
+  margin-left: 5px;
+  margin-right: 0.3rem;
+  margin-top: 0;
+
+  color: var(--dark-purple);
+}
+
+#myUsers .title {
+  color: var(--dark-purple);
+  font-size: 0.97rem;
+}
+
+#myUsers h2 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+/*-----------------------*/
+.list {
+  font-size: 0.9rem;
+}
+.list {
+  padding: 2rem;
+}
+
+/*---------STORE--------------*/
+
+.store {
+  padding: 1rem;
+  background: var(--light-purple);
+  border-radius: 0.15rem;
+
+  margin-top: 50%;
+}
+
+.store h2 {
+  font-size: 1rem;
+  color: var(--body-font);
+  text-align: center;
+}
+
+.store h3 {
+  margin-left: 0.5rem;
+  font: 500 0.9rem 'DM Sans', sans-serif;
+}
+
+.store button {
+  margin-top: 1rem;
+  margin-left: 0.7rem;
+}
+.store .button:hover {
+  background: rgb(216, 129, 216);
+}
+
+.store img {
+  width: 100%;
+}
